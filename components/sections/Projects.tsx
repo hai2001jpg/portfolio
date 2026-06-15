@@ -43,12 +43,12 @@ export default function Projects() {
         >
             <h1 className="poppins uppercase text-6xl text-center">Featured projects</h1>
 
-            <ul className="border-t border-black/20">
+            <ul className="border-t border-line">
                 {projects.map((project) => {
                     const isOpen = openProjects.includes(project.title);
 
                     return (
-                        <li key={project.title} className="border-b border-black/20 py-6"
+                        <li key={project.title} className="border-b border-line py-6"
                         >
                             <button type="button"
                                 className="flex w-full items-center justify-between text-left gap-4"
@@ -89,9 +89,9 @@ export default function Projects() {
             </ul>
             {openProjects.length > 0 &&
                 <button type="button"
-                    className="self-end rounded-full border border-black/10 px-4 py-2 text-sm transition-colors
-                        hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-40
-                        disabled:hover:bg-transparent disabled:hover:text-black cursor-pointer"
+                    className="self-end rounded-full border border-line px-4 py-2 text-sm transition-colors
+                        hover:bg-action hover:text-action-ink disabled:cursor-not-allowed disabled:opacity-40
+                        disabled:hover:bg-transparent disabled:hover:text-ink cursor-pointer"
                     disabled={openProjects.length === 0}
                     onClick={() => setOpenProjects([])}
                 >

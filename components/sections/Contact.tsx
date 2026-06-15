@@ -51,7 +51,7 @@ export default function Contact() {
                 ease: "easeOut",
             }}
         >
-            <div className="mx-auto flex min-h-[44rem] w-full max-w-[90rem] flex-col bg-[#0b0d0c] px-6 py-8 text-white shadow-2xl 
+            <div className="mx-auto flex min-h-[44rem] w-full max-w-[90rem] flex-col bg-panel px-6 py-8 text-panel-ink shadow-2xl
             sm:px-10 sm:py-10 lg:min-h-[48rem] lg:px-14 lg:py-12 xl:px-16">
                 <h1 className="poppins max-w-full text-[clamp(3.2rem,10vw,9rem)] leading-[0.9] font-light tracking-[-0.07em] uppercase">
                     Get in touch
@@ -61,30 +61,30 @@ export default function Contact() {
                     <div className="flex flex-col items-start gap-8">
                         <div className="space-y-4">
                             <a
-                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-lime-200"
+                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                                 href="mailto:haitranngoc98@gmail.com"
                             >
                                 haitranngoc98@gmail.com
                                 <ArrowIcon />
                             </a>
-                            <p className="dm-mono max-w-sm text-[0.7rem] leading-relaxed tracking-wide text-white/55 uppercase">
+                            <p className="dm-mono max-w-sm text-[0.7rem] leading-relaxed tracking-wide text-panel-muted uppercase">
                                 I build thoughtful digital experiences with a focus on clean interfaces,
                                 useful interactions, and reliable implementation.
                             </p>
                         </div>
 
-                        <p className="dm-mono mt-auto text-xs tracking-wider text-lime-200 uppercase">
+                        <p className="dm-mono mt-auto text-xs tracking-wider text-accent uppercase">
                             Contact /
                         </p>
                     </div>
 
                     <div className="space-y-10 lg:space-y-14">
                         <div className="space-y-2">
-                            <p className="dm-mono text-[0.65rem] tracking-widest text-white/45 uppercase">
+                            <p className="dm-mono text-[0.65rem] tracking-widest text-panel-muted uppercase">
                                 Phone
                             </p>
                             <a
-                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-lime-200"
+                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                                 href="tel:+421951137215"
                             >
                                 +421 951 137 215
@@ -93,11 +93,11 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-2">
-                            <p className="dm-mono text-[0.65rem] tracking-widest text-white/45 uppercase">
+                            <p className="dm-mono text-[0.65rem] tracking-widest text-panel-muted uppercase">
                                 Based in
                             </p>
                             <a
-                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-lime-200"
+                                className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
                                 href="https://www.google.com/maps/search/?api=1&query=Kosice%2C%20Slovakia"
                                 target="_blank"
                                 rel="noreferrer"
@@ -105,24 +105,24 @@ export default function Contact() {
                                 Košice, Slovakia
                                 <ArrowIcon />
                             </a>
-                            <p className="dm-mono max-w-xs text-[0.7rem] leading-relaxed tracking-wide text-white/55 uppercase">
+                            <p className="dm-mono max-w-xs text-[0.7rem] leading-relaxed tracking-wide text-panel-muted uppercase">
                                 Available for hire.
                             </p>
                         </div>
                     </div>
 
                     <div className="hidden items-start justify-end md:flex">
-                        <div className="flex aspect-square w-full max-w-52 items-center justify-center border border-white/10 bg-white/5 p-7">
+                        <div className="flex aspect-square w-full max-w-52 items-center justify-center border border-panel-line bg-panel-line p-7">
                             <Image
                                 src={Photo}
                                 alt=""
-                                className="size-full opacity-70 invert"
+                                className="panel-image size-full opacity-70"
                             />
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-14 flex flex-col gap-8 border-t border-white/10 pt-6 sm:mt-16 sm:flex-row sm:items-end sm:justify-between">
+                <div className="mt-14 flex flex-col gap-8 border-t border-panel-line pt-6 sm:mt-16 sm:flex-row sm:items-end sm:justify-between">
                     <ul className="flex flex-wrap gap-x-6 gap-y-3">
                         {socialLinks.map((link) => (
                             <li key={link.href}>
@@ -131,7 +131,7 @@ export default function Contact() {
                                     target="_blank"
                                     rel="noreferrer"
                                     className="group dm-mono inline-flex items-center gap-1.5 text-[0.7rem] 
-                                    tracking-wide uppercase transition-colors hover:text-lime-200"
+                                    tracking-wide uppercase transition-colors hover:text-accent"
                                 >
                                     {link.title}
                                     <ArrowIcon />

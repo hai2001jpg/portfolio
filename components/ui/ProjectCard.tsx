@@ -13,11 +13,11 @@ export default function ProjectCard({ description, href, duration, stack, src }:
         <article className="flex flex-col lg:flex-row gap-4">
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-4">
-                    <p className="dm-mono text-sm uppercase text-black/50">
+                    <p className="dm-mono text-sm uppercase text-muted">
                         {duration}
                     </p>
 
-                    <p className="max-w-3xl leading-7 text-black/75 text-pretty">
+                    <p className="max-w-3xl leading-7 text-muted text-pretty">
                         {description}
                     </p>
                 </div>
@@ -26,7 +26,7 @@ export default function ProjectCard({ description, href, duration, stack, src }:
                     {stack.map((tech) => (
                         <li
                             key={tech}
-                            className="rounded-full border border-black/10 px-4 py-2 text-xs font-semibold"
+                            className="rounded-full border border-line bg-surface px-4 py-2 text-xs font-semibold"
                         >
                             {tech}
                         </li>
@@ -35,7 +35,7 @@ export default function ProjectCard({ description, href, duration, stack, src }:
 
                 {href && (
                     <a href={href} target="_blank" rel="noreferrer"
-                        className="mt-4 rounded-full bg-black px-5 py-3 text-white w-max self-start hover:-translate-y-0.5 hover:bg-gray-800 
+                        className="mt-4 rounded-full bg-action px-5 py-3 text-action-ink w-max self-start hover:-translate-y-0.5 hover:bg-action-hover
                         duration-300 flex flex-row items-center gap-2">
                         Live demo
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="size-4" viewBox="0 0 16 16">

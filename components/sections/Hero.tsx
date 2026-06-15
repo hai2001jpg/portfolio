@@ -28,7 +28,7 @@ const skills = ["ReactJS", "TailwindCSS", "HTML/CSS", "NodeJS", "Firebase", "Pyt
 
 export default function Hero() {
     return (
-        <motion.section className="relative min-h-[calc(100vh-6rem)] w-full overflow-hidden bg-white flex flex-col"
+        <motion.section className="relative min-h-[calc(100vh-6rem)] w-full overflow-hidden bg-canvas flex flex-col"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{
@@ -43,8 +43,7 @@ export default function Hero() {
             <article className="relative mx-auto flex w-full max-w-7xl px-4 md:px-24">
                 <div className="group flex w-full items-center justify-center gap-2 whitespace-nowrap 
                     poppins text-[clamp(3.5rem,11vw,16rem)] font-black uppercase">
-                    <h1 className="text-white [-webkit-text-stroke:3px_#1a1a1a] [paint-order:stroke_fill] opacity-80 select-none
-                        transition-colors duration-300 ease-out group-hover:text-black">
+                    <h1 className="hero-outline opacity-80 select-none transition-colors duration-300 ease-out">
                         HAI TRAN NGOC
                     </h1>
                 </div>
@@ -55,14 +54,14 @@ export default function Hero() {
                 <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-2 self-center md:self-start">
                         <h2 className="poppins text-[clamp(2rem,3vw,5rem)] textbox-trim">Software Developer</h2>
-                        <p className="font-sans text-black/50 max-w-3/4">Building modern, user-friendly web applications that work in real world.</p>
+                        <p className="font-sans text-muted max-w-3/4">Building modern, user-friendly web applications that work in real world.</p>
                     </div>
 
-                    <button type="button" className="group relative mt-auto overflow-hidden rounded-full bg-black px-5 py-4 text-white
+                    <button type="button" className="group relative mt-auto overflow-hidden rounded-full bg-action px-5 py-4 text-action-ink
                             duration-300 cursor-pointer self-center md:self-start">
                         <span
                             className="absolute left-1/2 top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 scale-0 rounded-full 
-                                bg-gray-700 transition-transform duration-500 ease-out group-hover:scale-[32]"
+                                bg-action-hover transition-transform duration-500 ease-out group-hover:scale-[32]"
                             aria-hidden="true"
                         />
                         <Link href="#contact" className="relative z-10 flex flex-row items-center justify-center gap-2 text-nowrap">
@@ -76,8 +75,8 @@ export default function Hero() {
                 </div>
                 <ul className="flex flex-row md:flex-col items-center gap-2 font-sans self-center md:self-start mt-4 md:mt-0">
                     {links.map((link) => (
-                        <a key={link.href} href={link.href} className="py-3 px-6 bg-white/90 border border-black/10 rounded-full shadow-sm
-                            flex flex-row gap-1 items-center justify-center hover:bg-gray-100 duration-300"
+                        <a key={link.href} href={link.href} className="py-3 px-6 bg-surface border border-line rounded-full shadow-sm
+                            flex flex-row gap-1 items-center justify-center hover:bg-surface-hover duration-300"
                             target="_blank" rel="noreferrer">
                             {link.src}
                             {link.title}
@@ -87,11 +86,11 @@ export default function Hero() {
             </article>
 
             <article className="relative mx-auto w-full max-w-7xl px-4 md:px-24 py-6 md:py-12 flex flex-col">
-                <h2 className="text-black poppins uppercase text-4xl text-center">Skills</h2>
+                <h2 className="text-ink poppins uppercase text-4xl text-center">Skills</h2>
                 <ul className="flex flex-wrap items-center justify-center gap-2 mt-6">
                     {skills && skills.map((skill, index) => (
-                        <div key={index} className="inline-block bg-white/90 border border-black/10 rounded-full 
-                            shadow-sm px-4 py-2 m-2 text-sm font-sans font-semibold hover:bg-gray-100 duration-300">
+                        <div key={index} className="inline-block bg-surface border border-line rounded-full
+                            shadow-sm px-4 py-2 m-2 text-sm font-sans font-semibold hover:bg-surface-hover duration-300">
                             <span>
                                 {skill}
                             </span>

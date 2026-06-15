@@ -44,7 +44,7 @@ export default function Education() {
                     Education
                 </h2>
                 <div className="relative">
-                    <span className="absolute bottom-0 left-3 top-0 w-px bg-black/20 md:left-1/2 md:-translate-x-1/2"
+                    <span className="absolute bottom-0 left-3 top-0 w-px bg-line md:left-1/2 md:-translate-x-1/2"
                         aria-hidden="true"
                     />
 
@@ -55,32 +55,32 @@ export default function Education() {
                                 md:grid-cols-[1fr_3rem_1fr] md:gap-8 md:pb-20"
                             >
                                 <span className="relative z-10 col-start-1 row-start-1 mt-1 flex size-6 items-center 
-                                    justify-center rounded-full border border-black/40 bg-black md:col-start-2 
+                                    justify-center rounded-full border border-line-strong bg-action md:col-start-2
                                     md:justify-self-center"
                                     aria-hidden="true">
                                 </span>
 
-                                <article className={`col-start-2 row-start-1 border-t border-black/20 pt-5 md:row-start-1 
+                                <article className={`col-start-2 row-start-1 border-t border-line pt-5 md:row-start-1
                                     ${index % 2 === 0
                                         ? "md:col-start-1 md:text-right"
                                         : "md:col-start-3"
                                     }
                                     flex flex-col gap-4
                                 `}>
-                                    <p className="dm-mono text-sm uppercase text-black/75">
+                                    <p className="dm-mono text-sm uppercase text-muted">
                                         {item.duration}
                                     </p>
 
                                     <div className="flex flex-col gap-px">
-                                        <h3 className="poppins text-2xl font-semibold md:text-3xl text-black">
+                                        <h3 className="poppins text-2xl font-semibold md:text-3xl text-ink">
                                             {item.degree}
                                         </h3>
-                                        <p className="font-medium text-black/50">
+                                        <p className="font-medium text-muted">
                                             {item.name}
                                         </p>
                                     </div>
 
-                                    <p className="max-w-xl leading-7 text-black/75 md:inline-block">
+                                    <p className="max-w-xl leading-7 text-muted md:inline-block">
                                         <strong>Related courses: </strong>
                                         {item.description}
                                     </p>

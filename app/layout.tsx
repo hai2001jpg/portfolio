@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 
@@ -18,6 +19,20 @@ export const metadata: Metadata = {
   description: "Portfolio of Hai Tran Ngoc",
 };
 
+const themeScript = `
+  try {
+    const storedTheme = localStorage.getItem("theme");
+    const theme = storedTheme === "light" || storedTheme === "dark"
+      ? storedTheme
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    document.documentElement.dataset.theme = theme;
+  } catch {
+    document.documentElement.dataset.theme = "light";
+  }
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +44,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col items-center" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col items-center bg-canvas text-ink" suppressHydrationWarning>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
         <Navbar />
         {children}
       </body>
