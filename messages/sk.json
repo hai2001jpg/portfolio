@@ -1,0 +1,83 @@
+{
+  "Metadata": {
+    "title": "Hai Tran Ngoc",
+    "description": "Portfólio | Hai Tran Ngoc"
+  },
+  "Navigation": {
+    "projects": "Projekty",
+    "education": "Vzdelanie",
+    "contact": "Kontakt",
+    "openToWork": "Aktuálne dostupný",
+    "openMenu": "Otvoriť mobilné menu",
+    "closeMenu": "Zavrieť mobilné menu"
+  },
+  "LocaleSwitcher": {
+    "label": "Zmeniť jazyk",
+    "english": "Angličtina",
+    "slovak": "Slovenčina"
+  },
+  "ThemeToggle": {
+    "label": "Prepnúť tmavý/svetlý režim"
+  },
+  "ContactLink": {
+    "label": "Kontaktovať"
+  },
+  "Hero": {
+    "role": "Softvérový vývojár",
+    "description": "Som software developer z Košíc, ktorý rád premieňa nápady na funkčné webové aplikácie. Zameriavam sa na prehľadný dizajn, praktické riešenia a technológie, ktoré dávajú zmysel v reálnych projektoch.",
+    "collaborate": "Začať spoluprácu",
+    "skills": "Zručnosti"
+  },
+  "Projects": {
+    "heading": "Vybrané projekty",
+    "collapseAll": "Zbaliť všetko",
+    "liveDemo": "Ukážka aplikácie",
+    "screenshotAlt": "Ukážka projektu",
+    "items": {
+      "sloFactCheck": {
+        "title": "SloFactCheck",
+        "description": "Full-stack platforma na detekciu dezinformácií, ktorá integruje NLP transformerové modely doladené na korpuse s viac ako 150 000 vzorkami a externé API na overovanie tvrdení v reálnom čase voči spravodajskému obsahu v rôznych jazykoch. Navrhol som a vytvoril kompletný frontend v React.js a backend vo Flasku s autentifikáciou používateľov cez Firebase Auth a nasadením do produkcie.",
+        "duration": "Február 2025 - Jún 2026"
+      },
+      "audiometricGame": {
+        "title": "Audiometrická hra pre deti do 3 rokov | Živé IT projekty",
+        "description": "Spolupracoval som na vývoji interaktívnej webovej audiometrickej hry určenej na podporu vyšetrenia sluchu u malých detí pod vedením mentorov z rôznych technologických spoločností. Aplikácia prehrávala náhodné zvuky zvierat a používateľ mal prostredníctvom jednoduchého a pútavého rozhrania určiť správne zviera.",
+        "duration": "September 2024 - Február 2025"
+      }
+    }
+  },
+  "Education": {
+    "heading": "Vzdelanie",
+    "relatedCourses": "Absolvované predmety:",
+    "items": {
+      "masters": {
+        "school": "Technická univerzita v Košiciach",
+        "degree": "Ing. - Počítačové siete",
+        "duration": "September 2024 - máj 2026",
+        "description": "pokročilé počítačové siete a smerovacie algoritmy, počítačová bezpečnosť, dátová analytika a agilné riadenie projektov."
+      },
+      "bachelors": {
+        "school": "Technická univerzita v Košiciach",
+        "degree": "Bc. - Počítačové siete",
+        "duration": "September 2021 - jún 2024",
+        "description": "vývoj softvéru, algoritmy, OOP, dátové štruktúry, programovanie v C a Java, Docker, Kubernetes a základy Microsoft Azure."
+      },
+      "secondary": {
+        "school": "Súkromná stredná odborná škola, Ul. 29. augusta, Poprad",
+        "degree": "Informačné a digitálne technológie",
+        "duration": "September 2017 - jún 2021",
+        "description": "počítačové siete, vývoj webových stránok v HTML/CSS a grafický dizajn v Adobe Creative Cloud."
+      }
+    }
+  },
+  "Contact": {
+    "heading": "Kontaktovať",
+    "description": "Tvorím digitálne riešenia so zameraním na čisté rozhrania, užitočné interakcie a spoľahlivú implementáciu.",
+    "contact": "Kontakt /",
+    "phone": "Telefón",
+    "basedIn": "Pôsobím v",
+    "location": "Košice, Slovensko",
+    "available": "",
+    "copyright": "Autorské práva 2026"
+  }
+}

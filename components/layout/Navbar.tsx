@@ -1,19 +1,21 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import ContactLink from "@/components/ui/ContactLink";
+import LocaleSwitcher from "@/components/ui/LocaleSwitcher";
 import ThemeToggle from "@/components/ui/ThemeToggle";
-
-const navLinks = [
-    { href: "/#projects", title: "Projects" },
-    { href: "/#education", title: "Education" },
-    { href: "/#contact", title: "Contact" },
-];
+import { Link } from "@/i18n/navigation";
 
 export default function Navbar() {
+    const t = useTranslations("Navigation");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const navLinks = [
+        { href: "/#projects", title: t("projects") },
+        { href: "/#education", title: t("education") },
+        { href: "/#contact", title: t("contact") },
+    ];
 
     useEffect(() => {
         const navbarScroll = () => {
@@ -83,7 +85,7 @@ export default function Navbar() {
                     <div className="flex flex-row gap-2 items-center justify-center py-2 px-4 bg-surface border
                     border-line rounded-full shadow-lg text-nowrap">
                         <div className="size-2 bg-green-500 rounded-full motion-safe:animate-ping"></div>
-                        Open to work
+                        {t("openToWork")}
                     </div>
 
                     <ul className="hidden flex-row gap-8 text-lg text-ink dm-sans md:flex">
@@ -99,8 +101,12 @@ export default function Navbar() {
                         ))}
                     </ul>
 
-                    <div className="hidden items-center gap-3 md:flex">
-                        <ThemeToggle onToggle={toggleTheme} />
+                    <div className="hidden items-center gap-8 md:flex">
+                        <div className="flex flex-row gap-2">
+                            <LocaleSwitcher />
+                            <ThemeToggle onToggle={toggleTheme} />
+                        </div>
+
                         <ContactLink onClick={closeMenu} />
                     </div>
 
@@ -108,7 +114,7 @@ export default function Navbar() {
                         type="button"
                         className="flex size-11 flex-col items-center justify-center gap-1.5 rounded-full border
                         border-line bg-surface hover:bg-surface-hover duration-300 shadow-lg cursor-pointer md:hidden"
-                        aria-label="Open mobile menu"
+                        aria-label={t("openMenu")}
                         aria-controls="mobile-menu"
                         aria-expanded={isMenuOpen}
                         onClick={() => setIsMenuOpen(true)}
@@ -121,10 +127,9 @@ export default function Navbar() {
             </nav>
 
             {/* mobile layout */}
-            <div
-                id="mobile-menu"
-                className={`fixed inset-0 z-100 flex min-h-dvh flex-col overflow-y-auto overscroll-contain bg-canvas/98 px-6 py-6 transition-all duration-300 ease-out
-                    motion-reduce:transition-none md:hidden 
+            <div id="mobile-menu"
+                className={`fixed inset-0 z-100 flex min-h-dvh flex-col overflow-y-auto overscroll-contain bg-canvas/98 px-6 py-6 
+                    transition-all duration-300 ease-out motion-reduce:transition-none md:hidden 
                     ${isMenuOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-6 opacity-0"
@@ -134,19 +139,17 @@ export default function Navbar() {
                 inert={!isMenuOpen}
             >
                 <div className="relative flex items-center justify-between">
-                    <ThemeToggle onToggle={toggleTheme} />
-
-                    <div className="absolute left-1/2 flex -translate-x-1/2 flex-row gap-2 items-center justify-center py-2 px-4 bg-surface border
-                            border-line rounded-full shadow-lg text-nowrap select-none">
+                    <div className="absolute left-1/2 flex -translate-x-1/2 flex-row gap-2 items-center justify-center py-2 px-4 bg-surface 
+                        border border-line rounded-full shadow-lg text-nowrap select-none">
                         <div className="size-2 bg-green-500 rounded-full motion-safe:animate-ping"></div>
-                        Open to work
+                        {t("openToWork")}
                     </div>
 
                     <button
                         type="button"
-                        className="flex size-11 items-center justify-center rounded-full border border-line
+                        className="ml-auto flex size-11 items-center justify-center rounded-full border border-line
                             bg-action text-action-ink hover:bg-action-hover duration-300 shadow-lg cursor-pointer"
-                        aria-label="Close mobile menu"
+                        aria-label={t("closeMenu")}
                         onClick={closeMenu}
                     >
                         <span className="relative size-5">
@@ -158,21 +161,26 @@ export default function Navbar() {
                     </button>
                 </div>
 
-                <ul className="mt-16 flex flex-col gap-6 text-5xl uppercase text-ink dm-sans">
-                    {navLinks.map((item) => (
-                        <li key={item.href}>
-                            <Link
-                                href={item.href}
-                                className="duration-300 hover:text-muted"
-                                onClick={closeMenu}
-                            >
-                                {item.title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                <div className="flex flex-1 flex-col items-center justify-between pt-16">
+                    <ul className="flex w-full flex-col gap-6 text-5xl uppercase text-ink dm-sans">
+                        {navLinks.map((item) => (
+                            <li key={item.href}>
+                                <Link
+                                    href={item.href}
+                                    className="duration-300 hover:text-muted"
+                                    onClick={closeMenu}
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
 
-                <div className="mt-auto flex justify-center">
+                    <div className="flex flex-col gap-4 items-center">
+                        <ThemeToggle onToggle={toggleTheme} />
+                        <LocaleSwitcher />
+                    </div>
+
                     <ContactLink onClick={closeMenu} />
                 </div>
             </div>

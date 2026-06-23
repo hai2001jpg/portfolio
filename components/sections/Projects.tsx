@@ -2,30 +2,34 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import ProjectCard from "@/components/ui/ProjectCard";
 import SFC from "@/public/vysledok_analyzy.png";
 import PM_projekt from "@/public/audiometric_game.png";
 
-const projects = [
+const projectDefinitions = [
     {
-        title: "SloFactCheck",
-        description: "Full-stack disinformation detection platform integrating NLP transformer models, fine-tuned on corpus with +150k samples, and external APIs for real-time claim verification against news content in various languages. Designed and built the complete React.js frontend and Flask backend, with user authentication via Firebase Auth, deployed to production.",
+        id: "sloFactCheck",
         href: "https://kps-slofactcheck.onrender.com/",
-        duration: "Feb 2025 - June 2026",
         stack: ["ReactJS", "TailwindCSS", "Flask", "Firebase", "PyTorch"],
         src: SFC,
     },
     {
-        title: "Audiometric game for children under 3 years old | Živé IT projekty",
-        description: "Collaborated in the development of an interactive web-based audiometric game designed to support hearing assessment in young children, under mentorship of professionals across various techonology companies. The application played random animal sounds, requiring users to identify the correct animal through a simple and engaging interface.",
-        duration: "Sep 2024 - Feb 2025",
+        id: "audiometricGame",
         stack: ["HTML", "CSS", "JavaScript", "Flask", "PostgreSQL"],
         src: PM_projekt,
     }
-]
+] as const;
 
 export default function Projects() {
+    const t = useTranslations("Projects");
     const [openProjects, setOpenProjects] = useState<string[]>([]);
+    const projects = projectDefinitions.map((project) => ({
+        ...project,
+        title: t(`items.${project.id}.title`),
+        description: t(`items.${project.id}.description`),
+        duration: t(`items.${project.id}.duration`),
+    }));
 
     return (
         <motion.section id="projects" className="flex flex-col items-center justify-center w-full scroll-mt-24 
@@ -41,7 +45,7 @@ export default function Projects() {
                 ease: "easeOut",
             }}
         >
-            <h1 className="poppins uppercase text-6xl text-center">Featured projects</h1>
+            <h1 className="poppins uppercase text-6xl text-center">{t("heading")}</h1>
 
             <ul className="border-t border-line">
                 {projects.map((project) => {
@@ -95,7 +99,7 @@ export default function Projects() {
                     disabled={openProjects.length === 0}
                     onClick={() => setOpenProjects([])}
                 >
-                    Collapse all
+                    {t("collapseAll")}
                 </button>
             }
         </motion.section>

@@ -1,29 +1,20 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
-const educationData = [
-    {
-        name: "Technical University of Košice",
-        degree: "Ing. - Computer Networks",
-        duration: "September 2024 - May 2026",
-        description: "advanced networking and routing algorithms, cybersecurity, data analytics and agile project management.",
-    },
-    {
-        name: "Technical University of Košice",
-        degree: "Bc. - Computer Networks",
-        duration: "September 2021 - June 2024",
-        description: "software development, algorithms, OOP, data structures, programming in C and Java, Docker, Kubernetes and Microsoft Azure basics.",
-    },
-    {
-        name: "Súkromná stredná odborná škola, Ul. 29. augusta, Poprad",
-        degree: "Information and Digital Technologies",
-        duration: "September 2017 - June 2021",
-        description: "networking, web development in HTML/CSS and graphic design in Adobe Creative Cloud.",
-    }
-]
+const educationItems = ["masters", "bachelors", "secondary"] as const;
 
 export default function Education() {
+    const t = useTranslations("Education");
+    const educationData = educationItems.map((id) => ({
+        id,
+        name: t(`items.${id}.school`),
+        degree: t(`items.${id}.degree`),
+        duration: t(`items.${id}.duration`),
+        description: t(`items.${id}.description`),
+    }));
+
     return (
         <motion.section
             id="education"
@@ -41,7 +32,7 @@ export default function Education() {
         >
             <div className="mx-auto w-full p-4 flex flex-col gap-4">
                 <h2 className="poppins text-6xl font-semibold uppercase text-center">
-                    Education
+                    {t("heading")}
                 </h2>
                 <div className="relative">
                     <span className="absolute bottom-0 left-3 top-0 w-px bg-line md:left-1/2 md:-translate-x-1/2"
@@ -81,7 +72,7 @@ export default function Education() {
                                     </div>
 
                                     <p className="max-w-xl leading-7 text-muted md:inline-block">
-                                        <strong>Related courses: </strong>
+                                <strong>{t("relatedCourses")} </strong>
                                         {item.description}
                                     </p>
                                 </article>

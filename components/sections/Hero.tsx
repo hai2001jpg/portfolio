@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const links = [
     {
@@ -27,6 +28,8 @@ const links = [
 const skills = ["ReactJS", "TailwindCSS", "HTML/CSS", "NodeJS", "Firebase", "Python", "Docker", "Git"];
 
 export default function Hero() {
+    const t = useTranslations("Hero");
+
     return (
         <motion.section className="relative min-h-[calc(100vh-6rem)] w-full overflow-hidden bg-canvas flex flex-col"
             initial={{ opacity: 0, y: 24 }}
@@ -52,9 +55,9 @@ export default function Hero() {
             <article className="relative z-30 flex flex-col md:flex-row gap-4 px-6 py-6 justify-center 
                 md:justify-between md:px-24 md:py-8 ">
                 <div className="flex flex-col gap-4">
-                    <div className="flex flex-col gap-2 self-center md:self-start">
-                        <h2 className="poppins text-[clamp(2rem,3vw,5rem)] textbox-trim">Software Developer</h2>
-                        <p className="font-sans text-muted max-w-3/4">Building modern, user-friendly web applications that work in real world.</p>
+                    <div className="flex flex-col gap-2 items-center md:items-start text-center md:text-start">
+                        <h2 className="poppins text-[clamp(2rem,3vw,5rem)] textbox-trim">{t("role")}</h2>
+                        <p className="font-sans text-muted max-w-3/4">{t("description")}</p>
                     </div>
 
                     <button type="button" className="group relative mt-auto overflow-hidden rounded-full bg-action px-5 py-4 text-action-ink
@@ -65,7 +68,7 @@ export default function Hero() {
                             aria-hidden="true"
                         />
                         <Link href="#contact" className="relative z-10 flex flex-row items-center justify-center gap-2 text-nowrap">
-                            Let&apos;s collaborate
+                            {t("collaborate")}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                 className="size-6" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
@@ -86,7 +89,7 @@ export default function Hero() {
             </article>
 
             <article className="relative mx-auto w-full max-w-7xl px-4 md:px-24 py-6 md:py-12 flex flex-col">
-                <h2 className="text-ink poppins uppercase text-4xl text-center">Skills</h2>
+                <h2 className="text-ink poppins uppercase text-4xl text-center">{t("skills")}</h2>
                 <ul className="flex flex-wrap items-center justify-center gap-2 mt-6">
                     {skills && skills.map((skill, index) => (
                         <div key={index} className="inline-block bg-surface border border-line rounded-full

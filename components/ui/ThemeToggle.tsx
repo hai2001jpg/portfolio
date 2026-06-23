@@ -1,13 +1,17 @@
+import { useTranslations } from "next-intl";
+
 type ThemeToggleProps = {
     onToggle: () => void;
 };
 
 export default function ThemeToggle({ onToggle }: ThemeToggleProps) {
+    const t = useTranslations("ThemeToggle");
+
     return (
         <button
             type="button"
             className="flex size-11 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-lg transition-colors duration-300 hover:bg-surface-hover cursor-pointer"
-            aria-label="Toggle color theme"
+            aria-label={t("label")}
             onClick={onToggle}
         >
             <svg aria-hidden="true" className="theme-icon-sun size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">

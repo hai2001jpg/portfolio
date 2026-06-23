@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Photo from "@/public/globe.svg";
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const socialLinks = [
     {
@@ -36,6 +37,8 @@ function ArrowIcon() {
 }
 
 export default function Contact() {
+    const t = useTranslations("Contact");
+
     return (
         <motion.section
             id="contact"
@@ -54,7 +57,7 @@ export default function Contact() {
             <div className="mx-auto flex min-h-[44rem] w-full max-w-[90rem] flex-col bg-panel px-6 py-8 text-panel-ink shadow-2xl
             sm:px-10 sm:py-10 lg:min-h-[48rem] lg:px-14 lg:py-12 xl:px-16">
                 <h1 className="poppins max-w-full text-[clamp(3.2rem,10vw,9rem)] leading-[0.9] font-light tracking-[-0.07em] uppercase">
-                    Get in touch
+                    {t("heading")}
                 </h1>
 
                 <div className="mt-12 grid flex-1 gap-10 sm:mt-16 md:grid-cols-2 lg:mt-20 lg:grid-cols-[1.15fr_0.85fr_0.65fr] lg:gap-14">
@@ -68,20 +71,19 @@ export default function Contact() {
                                 <ArrowIcon />
                             </a>
                             <p className="dm-mono max-w-sm text-[0.7rem] leading-relaxed tracking-wide text-panel-muted uppercase">
-                                I build thoughtful digital experiences with a focus on clean interfaces,
-                                useful interactions, and reliable implementation.
+                                {t("description")}
                             </p>
                         </div>
 
                         <p className="dm-mono mt-auto text-xs tracking-wider text-accent uppercase">
-                            Contact /
+                            {t("contact")}
                         </p>
                     </div>
 
                     <div className="space-y-10 lg:space-y-14">
                         <div className="space-y-2">
                             <p className="dm-mono text-[0.65rem] tracking-widest text-panel-muted uppercase">
-                                Phone
+                                {t("phone")}
                             </p>
                             <a
                                 className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
@@ -94,7 +96,7 @@ export default function Contact() {
 
                         <div className="space-y-2">
                             <p className="dm-mono text-[0.65rem] tracking-widest text-panel-muted uppercase">
-                                Based in
+                                {t("basedIn")}
                             </p>
                             <a
                                 className="group inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent"
@@ -102,11 +104,11 @@ export default function Contact() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                Košice, Slovakia
+                                {t("location")}
                                 <ArrowIcon />
                             </a>
                             <p className="dm-mono max-w-xs text-[0.7rem] leading-relaxed tracking-wide text-panel-muted uppercase">
-                                Available for hire.
+                                {t("available")}
                             </p>
                         </div>
                     </div>
@@ -141,7 +143,7 @@ export default function Contact() {
                     </ul>
 
                     <p
-                        aria-label="Copyright 2026"
+                        aria-label={t("copyright")}
                         className="poppins text-[clamp(4rem,8vw,7rem)] leading-[0.75] font-light tracking-[-0.08em]"
                     >
                         © 26

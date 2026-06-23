@@ -1,0 +1,83 @@
+{
+  "Metadata": {
+    "title": "Hai Tran Ngoc",
+    "description": "Portfolio of Hai Tran Ngoc"
+  },
+  "Navigation": {
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact",
+    "openToWork": "Open to work",
+    "openMenu": "Open mobile menu",
+    "closeMenu": "Close mobile menu"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "english": "English",
+    "slovak": "Slovak"
+  },
+  "ThemeToggle": {
+    "label": "Toggle color theme"
+  },
+  "ContactLink": {
+    "label": "Get in touch"
+  },
+  "Hero": {
+    "role": "Software Developer",
+    "description": "I am a software developer based in Košice who enjoys turning ideas into functional web applications. I focus on clear design, practical solutions, and technologies that make sense in real projects.",
+    "collaborate": "Let's collaborate",
+    "skills": "Skills"
+  },
+  "Projects": {
+    "heading": "Featured projects",
+    "collapseAll": "Collapse all",
+    "liveDemo": "Live demo",
+    "screenshotAlt": "Project screenshot",
+    "items": {
+      "sloFactCheck": {
+        "title": "SloFactCheck",
+        "description": "Full-stack disinformation detection platform integrating NLP transformer models, fine-tuned on a corpus with more than 150,000 samples, and external APIs for real-time claim verification against news content in various languages. Designed and built the complete React.js frontend and Flask backend, with user authentication via Firebase Auth, deployed to production.",
+        "duration": "Feb 2025 - June 2026"
+      },
+      "audiometricGame": {
+        "title": "Audiometric game for children under 3 years old | Živé IT projekty",
+        "description": "Collaborated in the development of an interactive web-based audiometric game designed to support hearing assessment in young children, under the mentorship of professionals from various technology companies. The application played random animal sounds, requiring users to identify the correct animal through a simple and engaging interface.",
+        "duration": "Sep 2024 - Feb 2025"
+      }
+    }
+  },
+  "Education": {
+    "heading": "Education",
+    "relatedCourses": "Related courses:",
+    "items": {
+      "masters": {
+        "school": "Technical University of Košice",
+        "degree": "Ing. - Computer Networks",
+        "duration": "September 2024 - May 2026",
+        "description": "advanced networking and routing algorithms, cybersecurity, data analytics and agile project management."
+      },
+      "bachelors": {
+        "school": "Technical University of Košice",
+        "degree": "Bc. - Computer Networks",
+        "duration": "September 2021 - June 2024",
+        "description": "software development, algorithms, OOP, data structures, programming in C and Java, Docker, Kubernetes and Microsoft Azure basics."
+      },
+      "secondary": {
+        "school": "Private Secondary Vocational School, 29. augusta Street, Poprad",
+        "degree": "Information and Digital Technologies",
+        "duration": "September 2017 - June 2021",
+        "description": "networking, web development in HTML/CSS and graphic design in Adobe Creative Cloud."
+      }
+    }
+  },
+  "Contact": {
+    "heading": "Get in touch",
+    "description": "I build digital experiences with a focus on clean interfaces, useful interactions, and reliable implementation.",
+    "contact": "Contact /",
+    "phone": "Phone",
+    "basedIn": "Based in",
+    "location": "Košice, Slovakia",
+    "available": "Available for hire.",
+    "copyright": "Copyright 2026"
+  }
+}
