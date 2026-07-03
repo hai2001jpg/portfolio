@@ -11,10 +11,7 @@ export default function RootPage() {
   return (
     <main className="flex min-h-screen w-full items-center justify-center px-6 text-center">
       <div className="max-w-md space-y-4">
-        <p className="text-sm uppercase tracking-[0.3em] text-muted">
-          Hai Tran Ngoc
-        </p>
-        <h1 className="text-3xl font-semibold">Redirecting to English</h1>
+        <h1 className="text-3xl font-semibold">Redirecting...</h1>
         <p className="text-muted">
           If you are not redirected automatically, continue to the{" "}
           <Link href="/en" className="underline underline-offset-4">
