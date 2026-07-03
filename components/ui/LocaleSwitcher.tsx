@@ -33,7 +33,8 @@ export default function LocaleSwitcher() {
             supportedLocale === "en" ? t("english") : t("slovak")
           }
           aria-pressed={locale === supportedLocale}
-          className={`rounded-full px-2.5 py-1 text-xs font-semibold uppercase transition-colors duration-300 ${locale === supportedLocale
+          className={`rounded-full px-2.5 py-1 text-xs font-semibold uppercase transition-colors duration-300 cursor-pointer
+            ${locale === supportedLocale
               ? "bg-action text-action-ink"
               : "text-muted hover:text-ink"
             }`}
