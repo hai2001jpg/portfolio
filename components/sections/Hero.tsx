@@ -45,7 +45,7 @@ export default function Hero() {
         >
             <article className="relative mx-auto flex w-full max-w-7xl px-4 md:px-24">
                 <div className="group flex w-full items-center justify-center gap-2 whitespace-nowrap 
-                    poppins text-6xl sm:text-7xl lg:text-[clamp(3.5rem,11vw,16rem)] font-black uppercase">
+                    poppins text-[clamp(1.85rem,7.5vw,3.25rem)] sm:text-7xl lg:text-[clamp(3.5rem,11vw,16rem)] font-black uppercase leading-none tracking-tight">
                     <h1 className="hero-outline opacity-80 select-none transition-colors duration-300 ease-out">
                         HAI TRAN NGOC
                     </h1>
